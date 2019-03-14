@@ -5,7 +5,8 @@ import (
 	"fmt"
 )
 
-// Dump 打印变量的类型和值，支持同时打印多个变量
+// Dump 打印变量的类型和值，支持同时打印多个变量，
+// 本质是调用 fmt.Printf()，每个变量格式为 "[%T] %v\n"
 func Dump(v ...interface{}) {
 
 	var format string
