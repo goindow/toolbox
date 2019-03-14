@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func Example_Dump() {
+func ExampleDump() {
 	toolbox.Dump(os.Getwd())
 	// Output:
 	// [string] /usr/local/var/go/src/github.com/goindow/toolbox
