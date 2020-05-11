@@ -33,12 +33,12 @@ trace(func4, 3, true)
 trace(new(reflectStruct).func4, 5, false)
 
 // Output:
-call: main.func1
-time: 52.561µs
-
-call: main.func4
-time: 18.698µs
-
-call: main.(*reflectStruct).func4-fm
-time: 4.168µs
+// call: main.func1
+// time: 52.561µs
+//
+// call: main.func4
+// time: 18.698µs
+//
+// call: main.(*reflectStruct).func4-fm
+// time: 4.168µs
 ```
