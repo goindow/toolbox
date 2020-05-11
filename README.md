@@ -12,7 +12,7 @@ import (
 ```
 
 ### Dump
-- 打印变量的类型和值，支持同时打印多个变量，
+- 打印变量的类型和值，支持同时打印多个变量
 - 本质是调用 fmt.Printf()，每个变量格式为 "[%T] %v\n"
 ```go
 toolbox.Dump(os.Getwd())
@@ -20,4 +20,25 @@ toolbox.Dump(os.Getwd())
 // Output:
 // [string] /usr/local/var/go/src/github.com/goindow/toolbox
 // [<nil>] <nil>
+```
+
+### Trace
+- Trace 计算函数/方法运行耗时
+```go
+// 无参函数
+trace(func1)
+// 有参函数
+trace(func4, 3, true)
+// 有参方法
+trace(new(reflectStruct).func4, 5, false)
+
+// Output:
+call: main.func1
+time: 52.561µs
+
+call: main.func4
+time: 18.698µs
+
+call: main.(*reflectStruct).func4-fm
+time: 4.168µs
 ```
