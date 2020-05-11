@@ -24,9 +24,12 @@ toolbox.Dump(os.Getwd())
 
 ### Trace
 - 计算函数/方法运行耗时
+- 接收返回值，ret := trace(func2)，ret 类型为 []reflect.value
 ```go
 // 无参函数
 trace(func1)
+// 有返回值
+ret := trace(fun2)  // retInt := ret[0].Int()
 // 有参函数
 trace(func4, 3, true)
 // 有参方法
@@ -35,6 +38,9 @@ trace(new(reflectStruct).func4, 5, false)
 // Output:
 // call: main.func1
 // time: 52.561µs
+// 
+// call: main.func2
+// time: 57.324µs
 //
 // call: main.func4
 // time: 18.698µs

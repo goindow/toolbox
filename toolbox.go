@@ -24,9 +24,10 @@ func Dump(v ...interface{}) {
 // Trace 计算函数/方法运行耗时
 //
 // 无参函数，trace(func1)
+// 有返回值，ret := trace(func2)，ret 类型为 []reflect.value
 // 有参函数，trace(func4, 3, true)
 // 有参方法，trace(new(reflectStruct).func4, 5, false)
-func Trace(f interface{}, args ...interface{}) {
+func Trace(f interface{}, args ...interface{}) []reflect.Value {
 	// 1.处理函数
 	// 获取 f 反射类型，reflect.Type
 	// rftF := reflect.TypeOf(f)
@@ -47,7 +48,8 @@ func Trace(f interface{}, args ...interface{}) {
 	// 3.调用方法
 	// 耗时计时
 	begin := time.Now()
-	_ = rfvF.Call(rfvArgs)
+	ret := rfvF.Call(rfvArgs)
 	//toolbox.Dump(rfvF, name, args, rfvArgs, ret)
 	fmt.Printf("\ncall: %v\ntime: %v\n\n", name, time.Now().Sub(begin))
+	return ret
 }
