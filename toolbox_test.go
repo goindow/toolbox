@@ -1,10 +1,10 @@
 package toolbox
 
 import (
-    "testing"
-    //"os"
-    //"os/exec"
-    //"strings"
+	"testing"
+	//"os"
+	//"os/exec"
+	//"strings"
 )
 
 /*const (
@@ -26,18 +26,18 @@ func Test_Dump(t *testing.T) {
 }*/
 
 func fail(t *testing.T, s string) {
-    echo(t, s, 1)
+	echo(t, s, 1)
 }
 
 func ok(t *testing.T, s string) {
-    echo(t, s, 2)
+	echo(t, s, 2)
 }
 
 func echo(t *testing.T, s string, level uint) {
-    switch level {
-    case 1:
-        t.Error("[fail] " + s)
-    case 2:
-        t.Log("[ok] " + s)
-    }
+	switch level {
+	case 1:
+		t.Error("[fail] " + s)
+	case 2:
+		t.Log("[ok] " + s)
+	}
 }
