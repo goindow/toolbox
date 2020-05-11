@@ -23,7 +23,7 @@ toolbox.Dump(os.Getwd())
 ```
 
 ### Trace
-- Trace 计算函数/方法运行耗时
+- 计算函数/方法运行耗时
 ```go
 // 无参函数
 trace(func1)
