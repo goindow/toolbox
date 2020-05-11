@@ -23,7 +23,7 @@ func Dump(v ...interface{}) {
 // 无参函数，trace(func1)
 // 有参函数，trace(func4, 3, true)
 // 有参方法，trace(new(reflectStruct).func4, 5, false)
-func trace(f interface{}, args ...interface{}) {
+func Trace(f interface{}, args ...interface{}) {
     // 1.处理函数
     // 获取 f 反射类型，reflect.Type
     // rftF := reflect.TypeOf(f)
